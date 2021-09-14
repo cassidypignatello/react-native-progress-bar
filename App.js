@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
-import ProgressBar from './components/ProgressBar';
+import ProgressBar from './src/components/ProgressBar';
 
 const App = () => {
   return (
