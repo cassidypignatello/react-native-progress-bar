@@ -4,7 +4,7 @@ import {StyleSheet, View, Text} from 'react-native';
 const ProgressBar = () => {
   return (
     <View style={styles.container}>
-      <Text>Progress Bar goes here</Text>
+      <View style={styles.bar}></View>
     </View>
   );
 };
@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#EFF5F5',
     justifyContent: 'center',
     borderRadius: 20,
+  },
+  bar: {
+    width: '100%',
+    height: 12,
+    borderRadius: 36,
+    backgroundColor: '#467572',
   },
 });
 
