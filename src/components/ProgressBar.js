@@ -3,12 +3,11 @@ import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {incrementAction, decrementAction} from '../actions';
 import store from '../store';
+import {colors} from '../colors';
 
 const ProgressBar = () => {
   const dispatch = useDispatch();
   const currentProgress = useSelector(state => state.progress);
-
-  console.log(store.getState());
 
   return (
     <>
@@ -36,19 +35,19 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 100,
     padding: 16,
-    backgroundColor: '#EFF5F5',
+    backgroundColor: colors.lightGreen,
     justifyContent: 'center',
     borderRadius: 20,
   },
   bar: {
     height: 12,
     borderRadius: 36,
-    backgroundColor: '#467572',
+    backgroundColor: colors.darkGreen,
   },
   button: {
     marginTop: 20,
     marginRight: 20,
-    backgroundColor: '#EFF5F5',
+    backgroundColor: colors.lightGreen,
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 12,
