@@ -7,31 +7,31 @@
  */
 
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import ProgressBar from './src/components/ProgressBar';
 import {Provider} from 'react-redux';
 import store from './src/store';
+import styled from 'styled-components';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          contentContainerStyle={styles.contentContainer}>
+      <SafeArea>
+        <Scroll>
           <ProgressBar />
-        </ScrollView>
-      </SafeAreaView>
+        </Scroll>
+      </SafeArea>
     </Provider>
   );
 };
 
-const styles = StyleSheet.create({
-  contentContainer: {
+const Scroll = styled.ScrollView.attrs({
+  contentContainerStyle: {
     alignItems: 'center',
     height: '100%',
     justifyContent: 'center',
   },
-});
+})``;
+
+const SafeArea = styled.SafeAreaView``;
 
 export default App;
