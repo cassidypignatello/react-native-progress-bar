@@ -9,16 +9,20 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import ProgressBar from './src/components/ProgressBar';
+import {Provider} from 'react-redux';
+import store from './src/store';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        contentContainerStyle={styles.contentContainer}>
-        <ProgressBar />
-      </ScrollView>
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView>
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          contentContainerStyle={styles.contentContainer}>
+          <ProgressBar />
+        </ScrollView>
+      </SafeAreaView>
+    </Provider>
   );
 };
 

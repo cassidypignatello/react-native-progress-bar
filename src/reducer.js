@@ -1,3 +1,7 @@
+const initialState = {
+  progress: 30,
+};
+
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
     case 'increment': {
