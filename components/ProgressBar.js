@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 
 const ProgressBar = () => {
+  const [progress, setProgress] = useState(30);
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.bar}></View>
+        <View style={[styles.bar, {width: progress + '%'}]}></View>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button}>
