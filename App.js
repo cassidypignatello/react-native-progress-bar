@@ -8,11 +8,14 @@
 
 import React from 'react';
 import {SafeAreaView, ScrollView} from 'react-native';
+import ProgressBar from './components/ProgressBar';
 
 const App = () => {
   return (
     <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic"></ScrollView>
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        <ProgressBar />
+      </ScrollView>
     </SafeAreaView>
   );
 };
