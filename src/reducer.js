@@ -5,16 +5,24 @@ const initialState = {
 export default function appReducer(state = initialState, action) {
   switch (action.type) {
     case 'increment': {
-      return {
-        ...state,
-        progress: state.progress + 20,
-      };
+      const {maxValue, increment} = action.payload;
+      const nextValue = state.progress + increment;
+      return nextValue < maxValue
+        ? {
+            ...state,
+            progress: nextValue,
+          }
+        : {...state, progress: maxValue};
     }
     case 'decrement': {
-      return {
-        ...state,
-        progress: state.progress - 20,
-      };
+      const {minValue, increment} = action.payload;
+      const nextValue = state.progress - increment;
+      return nextValue > minValue
+        ? {
+            ...state,
+            progress: nextValue,
+          }
+        : {...state, progress: minValue};
     }
     default:
       return state;
