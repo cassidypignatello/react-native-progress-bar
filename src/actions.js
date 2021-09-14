@@ -1,7 +1,7 @@
-const incrementAction = {
+export const incrementAction = {
   type: 'increment',
 };
 
-const decrementAction = {
+export const decrementAction = {
   type: 'decrement',
 };

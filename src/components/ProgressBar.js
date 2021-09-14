@@ -1,31 +1,29 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {incrementAction, decrementAction} from '../actions';
+import store from '../store';
 
 const ProgressBar = () => {
-  const [progress, setProgress] = useState(30);
+  const dispatch = useDispatch();
+  const currentProgress = useSelector(state => state.progress);
 
-  const incrementProgress = () => {
-    setProgress(prevState => (progress > 90 ? prevState + 20 : prevState + 10));
-  };
-
-  const decrementProgress = () => {
-    setProgress(prevState => (progress > 10 ? prevState - 20 : prevState - 10));
-  };
+  console.log(store.getState());
 
   return (
     <>
       <View style={styles.container}>
-        <View style={[styles.bar, {width: progress + '%'}]}></View>
+        <View style={[styles.bar, {width: currentProgress + '%'}]}></View>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => progress < 100 && incrementProgress()}>
+          onPress={() => dispatch(incrementAction)}>
           <Text style={styles.buttonLabel}>+</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => progress > 0 && decrementProgress()}>
+          onPress={() => dispatch(decrementAction)}>
           <Text style={styles.buttonLabel}>-</Text>
         </TouchableOpacity>
       </View>

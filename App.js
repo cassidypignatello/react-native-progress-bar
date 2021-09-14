@@ -13,7 +13,6 @@ import {Provider} from 'react-redux';
 import store from './src/store';
 
 const App = () => {
-  console.log(store.getState());
   return (
     <Provider store={store}>
       <SafeAreaView>
