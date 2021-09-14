@@ -8,6 +8,10 @@ const ProgressBar = () => {
     setProgress(prevState => (progress > 90 ? prevState + 20 : prevState + 10));
   };
 
+  const decrementProgress = () => {
+    setProgress(prevState => (progress > 10 ? prevState - 20 : prevState - 10));
+  };
+
   return (
     <>
       <View style={styles.container}>
@@ -19,7 +23,9 @@ const ProgressBar = () => {
           onPress={() => progress < 100 && incrementProgress()}>
           <Text style={styles.buttonLabel}>+</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => progress > 0 && decrementProgress()}>
           <Text style={styles.buttonLabel}>-</Text>
         </TouchableOpacity>
       </View>
