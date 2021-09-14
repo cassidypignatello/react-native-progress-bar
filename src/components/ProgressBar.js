@@ -13,6 +13,7 @@ const ProgressBar = () => {
     <>
       <View style={styles.container}>
         <View style={[styles.bar, {width: currentProgress + '%'}]}></View>
+        <View style={styles.barContainer}></View>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
@@ -43,6 +44,13 @@ const styles = StyleSheet.create({
     height: 12,
     borderRadius: 36,
     backgroundColor: colors.darkGreen,
+    zIndex: 1,
+  },
+  barContainer: {
+    height: 12,
+    borderRadius: 36,
+    backgroundColor: colors.gray,
+    bottom: 12,
   },
   button: {
     marginTop: 20,
