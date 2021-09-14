@@ -1,13 +1,11 @@
-const maxValue = 100;
-const minValue = 0;
-const increment = 20;
+import {MAX_VALUE, MIN_VALUE, INCREMENT} from './constants';
 
 export const incrementAction = {
   type: 'increment',
-  payload: {maxValue, increment},
+  payload: {maxValue: MAX_VALUE, increment: INCREMENT},
 };
 
 export const decrementAction = {
   type: 'decrement',
-  payload: {minValue, increment},
+  payload: {minValue: MIN_VALUE, increment: INCREMENT},
 };
